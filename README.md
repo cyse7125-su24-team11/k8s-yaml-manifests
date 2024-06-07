@@ -12,5 +12,8 @@
 
 -   Deploy Kubernetes infrastructure
     -   kind create cluster
+    -   kubectl create secret generic regcred \
+    --from-file=.dockerconfigjson=/Users/shabinasingh/.docker/config.json \
+    --type=kubernetes.io/dockerconfigjson
     -   kubectl apply -f pod.yaml
     -   kubectl port-forward pods/caddy-webapp 8080:8080 
