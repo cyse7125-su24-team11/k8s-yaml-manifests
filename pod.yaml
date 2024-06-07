@@ -10,12 +10,12 @@ spec:
       ports:
         - containerPort: 8080
           name: http-web-svc
-      # env:
-      #   - name: CADDY_PORT
-      #     valueFrom:
-      #       configMapKeyRef:
-      #         name: caddy-config
-      #         key: CADDY_PORT
+      env:
+        - name: CADDY_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: caddy-config
+              key: CADDY_PORT
       readinessProbe:
         httpGet:
           path: /
